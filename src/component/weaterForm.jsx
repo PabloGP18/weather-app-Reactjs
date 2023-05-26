@@ -13,10 +13,13 @@ const WeaterForm = () => {
     SetInputValue(e.target.value)
   }, [])
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setCity(inputValue)
-  }
+  const handleSubmit = useCallback(
+    (e) => {
+      e.preventDefault()
+      setCity(inputValue)
+    },
+    [setCity, inputValue]
+  )
 
   return (
     <>
